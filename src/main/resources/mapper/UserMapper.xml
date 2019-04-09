@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.mytest.springbootssm.mapper.UserMapper">
+    <resultMap id="mysqlTestUser" type="cn.mytest.springbootssm.pojo.User">
+        <id column="u_id" property="id"/>
+        <result column="u_username" property="username"/>
+        <result column="u_password" property="pwd"/>
+    </resultMap>
+    <select id="findAll" resultMap="mysqlTestUser">
+        select * from  test.t_user order by u_id;
+    </select>
+</mapper>
